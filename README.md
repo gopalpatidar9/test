@@ -22,4 +22,4 @@ Things you may want to cover:
 - Deployment instructions
 
 - ...
-  hello
+  first test repo on theS complete ruby on rails developer by Gopal Patidar
