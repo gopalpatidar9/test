@@ -1,0 +1,8 @@
+<h1> hello wlcom to show page </h1>
+
+<p>Artical: <%= @artical.title%></P>
+<p>Description: <%= @artical.discription%></p>
+
+<a><%= link_to "Edit" , edit_artical_path(@artical) %></a>
+<a><%= link_to "delete" , artical_path(@artical) , method: :delete %></a>
+<a><%= link_to "Backe to Articals" , articals_path %></a>

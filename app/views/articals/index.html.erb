@@ -1,0 +1,23 @@
+<h1>Articals list page</h1>
+<table>
+  <thead>
+   <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Action</th>
+   </tr> 
+  </thead>
+  <% @articals.each do |artical|%>
+    <tbody>
+    <tr>
+      <td><%= artical.title %></td>
+      <td><%= artical.discription%></td>
+      <td><%= link_to "show" , artical_path(artical)%></td>
+      <td><%= link_to "edit" , edit_artical_path(artical)%></td>
+      <td><%= button_to "Delete", artical_path(artical), method: :delete %></td>
+    </tr> 
+    </tbody>
+  <% end %>
+</table>
+
+<a><%= link_to "Create New Artical" , new_artical_path %></a>
