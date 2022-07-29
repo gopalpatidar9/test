@@ -1,0 +1,44 @@
+.navbar-brand {
+  font-size: 35px;
+}
+
+#bgi {
+  background-image: url("card.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
+
+.container-md {
+  margin-top: 25px;
+}
+
+#bgi-title {
+  font-size: 60px;
+  margin-top: 60px;
+  font-family: sans-serif;
+}
+
+#bgi-text {
+  margin-top: 15px;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+.btn-lg {
+  font-size: 28px;
+  margin-top: 40px;
+}
+
+.artical-list {
+  font-size: 50px;
+  margin-top: 60px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#shedo {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-bottom: 80px;
+}

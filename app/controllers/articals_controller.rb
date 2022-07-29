@@ -5,7 +5,7 @@ class ArticalsController < ApplicationController
   end
 
   def index 
-    @articals = Artical.all
+    @articals = Artical.all.order(created_at: :desc)
   end
 
   def new
@@ -15,7 +15,7 @@ class ArticalsController < ApplicationController
   def create
     @artical = Artical.new(artical_params)
     if @artical.save
-      flash[:notice] = "sucsses."
+      flash[:notice] = "Article was successfully Created."
      redirect_to artical_path(@artical)
     else 
       render 'new'
@@ -27,7 +27,7 @@ class ArticalsController < ApplicationController
 
   def update 
     if @artical.update(artical_params)
-      flash[:notice] = "artical updated "
+      flash[:notice] = "Article was successfully updated "
       redirect_to @artical
     else
       render "edit"
@@ -37,7 +37,7 @@ class ArticalsController < ApplicationController
 
   def destroy
     @artical.destroy
-      flash[:success] = 'Artical was successfully deleted.'
+      flash[:success] = 'Article was successfully deleted.'
       redirect_to articals_path
     
   end

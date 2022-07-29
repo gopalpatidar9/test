@@ -1,23 +1,25 @@
-<h1>Articals list page</h1>
-<table>
-  <thead>
-   <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Action</th>
-   </tr> 
-  </thead>
-  <% @articals.each do |artical|%>
-    <tbody>
-    <tr>
-      <td><%= artical.title %></td>
-      <td><%= artical.discription%></td>
-      <td><%= link_to "show" , artical_path(artical)%></td>
-      <td><%= link_to "edit" , edit_artical_path(artical)%></td>
-      <td><%= button_to "Delete", artical_path(artical), method: :delete %></td>
-    </tr> 
-    </tbody>
-  <% end %>
-</table>
+<h1 class="artical-list">Listing all articles</h1>
 
-<a><%= link_to "Create New Artical" , new_artical_path %></a>
+
+<div class="row justify-content-md-center">
+<div class="col-8">
+<% @articals.each do |artical|%>
+<div class="container-md">
+  <div class="card text-center" id="shedo">
+    <div class="card-header bg-info text-white">
+      <em>By Gopal Patidar</em>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= link_to artical.title.capitalize , artical_path(artical) , class:"text-success"%></h5>
+      <p class="card-text"><%= truncate(artical.discription, length: 100)%></p>
+      <p><%= link_to"Show" , artical_path(artical) , class:"btn btn-outline-success"%>
+      <%= link_to"Edit" , edit_artical_path(artical) , class:"btn btn-outline-info"%>
+      <%= button_to"Delete" , artical_path(artical) , method: :delete ,  data:  {turbo_confirm: "Are you sure?"} , class:"btn btn-outline-danger"%>
+      </p>
+    </div>
+    <div class="card-footer text-muted">
+      <small> Created <%= time_ago_in_words(artical.created_at)%> ago </small>
+    </div>
+  </div>
+</div>  
+<% end %>  

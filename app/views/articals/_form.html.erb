@@ -1,24 +1,19 @@
-<% if @artical.errors.any? %>
- <h1> not correct chake </h1>
- <ul>
-  <% @artical.errors.full_messages.each do |msg|%>
-    <li><%= msg %></li>
-  <% end %>
- </ul>
-<% end %>
 
 <%= form_with(model: @artical , local: true ) do |f| %>
-<p>
-  <%= f.label :title %><br>
-  <%= f.text_field :title%>
-</p>
-
-<p>
-  <%= f.label :description %><br>
-  <%= f.text_area :discription%>
-</p>
-
-<p>
-  <%= f.submit%>
-</p>
+  <div class="container shadow p-5 mb-5 bg-body rounded">
+    <%= render 'shaerd/errors' %>
+    <form>
+      <div class="mb-3">
+        <%= f.label :title , class:"form-label" %><br>
+        <%= f.text_field :title , class:"form-control" , placeholder:"Ttile of Article"%>
+      </div>
+      <div class="mb-3">
+        <%= f.label :description, class:"form-label" %><br>
+        <%= f.text_area :discription , class:"form-control" , placeholder:"Description of Article" , size: "10x5"%>
+      </div>
+      <div class="d-grid gap-2 col-6 mx-auto">
+       <%= f.submit class:"btn btn-primary"%>
+      </div>
+    </form>
+ </div>
 <% end %>
